@@ -6,6 +6,9 @@ var rotation_speed = 100
 var velocity = Vector3.ZERO
 var rotation_dir = 1.5
 
+#handle interaction
+signal interaction
+
 func handle_input(delta):
 	#rotation_dir = 0
 	velocity = Vector3.ZERO
@@ -17,3 +20,6 @@ func handle_input(delta):
 		velocity -= Vector3.RIGHT.rotated(Vector3.UP, rotation_dir - PI/2) * speed * delta
 	if Input.is_action_pressed("ui_up"):
 		velocity += Vector3.RIGHT.rotated(Vector3.UP, rotation_dir - PI/2) * speed * delta
+	#interaction
+	if Input.is_action_just_pressed("ui_accept"):
+		emit_signal("interaction")

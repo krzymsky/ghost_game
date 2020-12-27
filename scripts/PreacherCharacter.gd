@@ -9,6 +9,9 @@ var current_animation = ""
 var movement_controller = preload("res://scripts/CharacterMovementController.gd").new()
 var velocity = Vector3.ZERO
 
+#zaczynam psucie - interakcje
+var can_interact = false
+
 onready var animation_player = $Model/AnimationPlayer
 
 func _ready():
@@ -31,3 +34,6 @@ func play_animation(animation):
 	if current_animation != animation:
 		current_animation = animation
 		animation_player.play(current_animation)
+
+func set_interactability():
+	can_interact = !can_interact
