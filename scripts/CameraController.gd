@@ -7,7 +7,7 @@ var rotation_speed = PI/2
 var max_zoom = 20
 var min_zoom = 0.5
 var zoom_speed = 0.5
-var zoom = 6
+var zoom = 20
 
 func _process(delta):
 	var y_rotation = 0

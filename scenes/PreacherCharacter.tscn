@@ -7,6 +7,7 @@
 height = 2.0
 
 [node name="PreacherCharacter" type="KinematicBody"]
+collision_mask = 12
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

@@ -3,4 +3,6 @@
 [ext_resource path="res://assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
 
 [resource]
+resource_name = "DefaultFont"
+size = 10
 font_data = ExtResource( 1 )

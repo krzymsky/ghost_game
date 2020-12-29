@@ -3,13 +3,11 @@ extends Control
 const warning_color = Color.crimson
 const return_color  = Color.limegreen
 
-# variables -------------------------------------------------------------------
 var active = false;
 
-onready var input_control = $Container/Input
+onready var input_control  = $Container/Input
 onready var output_control = $Container/Output
 
-# methods ---------------------------------------------------------------------
 func _ready():
 	set_active(false)
 			
@@ -45,8 +43,6 @@ func process_command(text:String):
 		var command_return = execute_command(command_name, words)
 		push_text_to_output(str(command_return))
 	
-	#push_text_to_output(str(words))
-	
 func execute_command(name, args):
 	var callback_name = "command_callback_" + name;
 	if has_method(callback_name):
@@ -60,7 +56,7 @@ func _on_Input_text_entered(new_text):
 	push_text_to_output("> " + new_text)
 	process_command(new_text)
 	
-# callback methods ------------------------------------------------------------
+# --- callback methods
 func command_callback_debug_draw(args):
 	if len(args) > 0:
 		var value = bool(int(args[0]))
